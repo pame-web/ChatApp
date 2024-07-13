@@ -7,17 +7,17 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
   {
-    path: 'chat-grupal',
-    loadChildren: () => import('./chat-grupal/chat-grupal.module').then(m => m.ChatGrupalPageModule)
+    path: 'grupo-uno',
+    loadChildren: () => import('./grupo-uno/grupo-uno.module').then(m => m.GrupoUnoPageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
 ];
 
@@ -27,4 +27,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

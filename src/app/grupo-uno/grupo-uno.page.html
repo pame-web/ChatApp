@@ -1,0 +1,121 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="image-container">
+    <img src="https://i.pinimg.com/564x/8a/93/bc/8a93bcd4be11d590b79ce1ebb3be5af2.jpg" alt="Chat Grupal Image">
+    <div class="text-container">
+      <h2>Grupo Uno</h2>
+    </div>
+  </div>
+  <!-- Estructura básica de chat -->
+  <div class="chat-container">
+    <ion-list lines="none">
+      <ion-item *ngFor="let message of messages">
+        <ion-label>{{ message.content }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- Formulario para enviar mensajes -->
+  <ion-footer>
+    <ion-toolbar class="footer-toolbar">
+      <div class="input-container">
+        <ion-input [(ngModel)]="newMessage" placeholder="Escribe un mensaje..." class="message-input" style="color: white;"></ion-input>
+        <ion-button fill="clear" class="send-button" (click)="sendMessage()">
+          <img src="https://cdn-icons-png.freepik.com/512/1/1380.png" alt="Enviar" style="width: 30px; height: 30px;">
+        </ion-button>
+      </div>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
+
+<style>
+  
+  .chat-container {
+    padding: 20px;
+  }
+
+  .chat-container ion-list {
+    max-height: calc(100vh - 150px); /* Altura máxima ajustada para el chat */
+    overflow-y: auto; /* Scroll vertical cuando el contenido excede la altura */
+  }
+
+  .chat-container ion-item {
+    padding: 2px;
+    background-color: #fcf9f9;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+
+  .chat-container ion-item:last-child {
+    margin-bottom: 0;
+  }
+
+  ion-footer {
+    --ion-background-color: #ffffff; /* Color de fondo del footer */
+    --border-top: 5px solid #ccc; /* Borde superior del footer */
+  }
+
+.footer-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4 10px; /* Margen en los costados */
+  background-color: rgba(0, 0, 255, 0.85); /* Fondo azul con transparencia */
+}
+ .input-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+ .message-input {
+  flex: 1;
+  margin-right: 10px;
+  color: white; /* Color de texto blanco */
+}
+
+.send-button {
+  margin-left: 10px; /* Separación entre el input y el botón */
+  color: white; /* Color de texto blanco */
+}
+
+.send-button img {
+  width: 30px;
+  height: 30px;
+}
+  .image-container {
+    display: flex;
+    justify-content: flex-start; /* Alinea la imagen a la izquierda */
+    align-items: center;
+    padding-top: 20px; /* Espacio opcional superior */
+    padding-left: 40px; /* Espacio opcional a la izquierda */
+  }
+
+  .image-container img {
+    border-radius: 50%;
+    width: 68px; /* Tamaño ajustado */
+    height: 60px; /* Tamaño ajustado */
+    object-fit: cover;
+    margin-right: 30px; /* Espacio entre la imagen y el texto */
+  }
+
+  .text-container {
+    background-color: #3498db; /* Fondo azul */
+    text-align: center; /* Texto centrado */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 10px; /* Espacio superior */
+  }
+
+  .text-container h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* Color de texto blanco */
+  }
+</style>

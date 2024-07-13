@@ -8,7 +8,11 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'chat-grupal',
+    loadChildren: () => import('./chat-grupal/chat-grupal.module').then( m => m.ChatGrupalPageModule)
   },
   {
     path: 'grupo-uno',

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+       
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,80 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large"> </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="image-container">
+    <img src="https://i.pinimg.com/564x/8a/93/bc/8a93bcd4be11d590b79ce1ebb3be5af2.jpg" alt="Chat Grupal Image">
+    <div class="text-container">
+      Chat Grupal
+    </div>
+
+    <!-- Formulario de registro de usuarios -->
+    <div class="form-container">
+      <form>
+        <ion-item>
+          <ion-label position="floating">Nombre de usuario</ion-label>
+          <ion-input type="text" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Correo electrónico</ion-label>
+          <ion-input type="email" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" required></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" color="primary" type="submit">Registrar</ion-button>
+      </form>
+    </div>
   </div>
 </ion-content>
+
+<style>
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    padding-top: 20px; /* Espacio opcional superior */
+  }
+
+  .image-container img {
+    border-radius: 50%;
+    width: 200px; /* Ajusta el tamaño según sea necesario */
+    height: 200px; /* Ajusta el tamaño según sea necesario */
+    object-fit: cover;
+  }
+
+  .text-container {
+    margin-top: 10px; /* Espacio entre los elementos */
+    font-size: 24px; /* Ajusta el tamaño de la fuente según sea necesario */
+    font-weight: bold; /* Ajusta el grosor de la fuente según sea necesario */
+    text-align: center;
+  }
+
+  .form-container {
+    width: 100%;
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin-top: 20px; /* Espacio entre la imagen y el formulario */
+    padding: 20px;
+    background-color: #f2f2f2; /* Color de fondo del formulario */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  }
+
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-container ion-item {
+    margin-bottom: 15px;
+  }
+</style>
